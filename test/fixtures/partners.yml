@@ -1,0 +1,40 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+horns-n-hooves:
+  name:   horns-n-hooves
+  code:   hnh
+  title:  ООО "Рога и копыта"
+  kind:   3
+  role:   0
+  email:  info@horns-n-hooves.com
+  url:    https://horn-n-hooves.com
+  inn:    1234567890
+  kpp:    5250062707
+  ogrn:   1155250001125
+  ogrnip: nil
+  okpo:   48314529
+  okato:  nil
+  certificate_number: 77123098348
+  certificate_date: 2020-10-17
+  status: 1
+  comment: "OOO Roga I Kopyta"
+
+pvv:
+  name:   pvv
+  code:   pvv
+  title:  ИП Пупкин Василий Васильевич
+  kind:   1
+  role:   2
+  email:  vpp@mail.ru
+  url:    nil
+  inn:    123456789012
+  kpp:    nil
+  ogrn:   nil
+  ogrnip: 316527500010692
+  okpo:   nil
+  okato:  nil
+  certificate_number: 77454552
+  certificate_date: 2021-05-23
+  status: 0
+  comment: Курьер
+  uuid: 'dummy'

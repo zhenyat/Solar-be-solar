@@ -69,7 +69,7 @@ gem 'rails', '6.1.4.4'             # Bundle edge Rails instead: gem 'rails', git
 gem 'sqlite3'                      # Use sqlite3    as the database for Active Record
 gem 'seed_dump'                    # https://github.com/rroblak/seed_dump
 gem 'seedbank'                     # http://github.com/james2m/seedbank
-
+gem 'securerandom' 
 gem 'ancestry'                     # https://github.com/stefankroes/ancestry
 
 gem 'puma'                         # Use Puma as the app server
@@ -83,6 +83,7 @@ gem 'bootsnap', require: false     # Reduces boot times through caching; require
 
 gem 'simple_form'                  # https://github.com/plataformatec/simple_form
 gem 'enum_help'                    # MUST BE for simple form
+gem 'translate_enum'
 gem 'haml-rails'                   # https://github.com/indirect/haml-rails
 gem 'pundit'                       # https://github.com/elabs/pundit
 gem 'countries'

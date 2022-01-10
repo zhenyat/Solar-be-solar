@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_170507) do
+ActiveRecord::Schema.define(version: 2022_01_10_084040) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -99,6 +99,35 @@ ActiveRecord::Schema.define(version: 2022_01_09_170507) do
     t.index ["name"], name: "index_companies_on_name", unique: true
     t.index ["ogrnip"], name: "index_companies_on_ogrnip", unique: true
     t.index ["title"], name: "index_companies_on_title", unique: true
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "code", null: false
+    t.string "title", null: false
+    t.integer "kind", limit: 1, default: 3, null: false
+    t.integer "role", limit: 1, default: 0, null: false
+    t.string "email", null: false
+    t.string "url"
+    t.string "inn", null: false
+    t.string "kpp"
+    t.string "ogrn"
+    t.string "ogrnip"
+    t.string "okpo"
+    t.string "okato"
+    t.string "certificate_number"
+    t.date "certificate_date"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.text "comment"
+    t.string "uuid", default: "9a7bbc68-be1f-4c18-95b0-aab865724600", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_partners_on_code", unique: true
+    t.index ["email"], name: "index_partners_on_email", unique: true
+    t.index ["inn"], name: "index_partners_on_inn", unique: true
+    t.index ["name"], name: "index_partners_on_name", unique: true
+    t.index ["title"], name: "index_partners_on_title", unique: true
+    t.index ["uuid"], name: "index_partners_on_uuid", unique: true
   end
 
   create_table "samples", force: :cascade do |t|
