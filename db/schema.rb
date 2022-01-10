@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_164174) do
+ActiveRecord::Schema.define(version: 2022_01_09_170507) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -73,6 +73,32 @@ ActiveRecord::Schema.define(version: 2022_01_09_164174) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.string "inn", null: false
+    t.string "ogrnip", null: false
+    t.string "certificate_number"
+    t.date "certificate_date"
+    t.string "email", null: false
+    t.string "phone"
+    t.string "legal_address"
+    t.string "pickup_address"
+    t.string "url"
+    t.text "comment"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.string "seo_title"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_companies_on_email", unique: true
+    t.index ["inn"], name: "index_companies_on_inn", unique: true
+    t.index ["name"], name: "index_companies_on_name", unique: true
+    t.index ["ogrnip"], name: "index_companies_on_ogrnip", unique: true
+    t.index ["title"], name: "index_companies_on_title", unique: true
   end
 
   create_table "samples", force: :cascade do |t|

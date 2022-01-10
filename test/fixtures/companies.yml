@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+ips:
+  name:   ips
+  title:  ИП Иванов Петр Сергеевич
+  inn:    773374764754
+  ogrnip: 319774600718433
+  certificate_number: 5428513321
+  certificate_date: 2021-12-01
+  email: dummy@mail.ru
+  phone: nil
+  legal_address: nil
+  pickup_address: nil
+  url: www.dummy.org
+  comment: nil
+  status: 0
+  seo_title: nil
+  seo_description: nil
+  seo_keywords: nil
+
+ppp:
+  name:   ppp
+  title:  ИП Петров Петр Петрович
+  inn:    773374764751
+  ogrnip: 319774600718436
+  email: roga@mail.ru
+  status: 1
