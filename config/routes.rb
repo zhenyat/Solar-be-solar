@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :accounts, only: [:index, :show]
         resources :companies
         resources :partners
+        resources :banks
       # Add new admin resources before this line
     end
   

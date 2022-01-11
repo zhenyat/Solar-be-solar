@@ -44,15 +44,16 @@ class Partner < ApplicationRecord
   translate_enum :role
 
   before_validation :generate_dummy_email
-  
+  before_validation :generate_uuid
+
   validates :name,    presence: true, uniqueness: true 
   validates :code,    presence: true, uniqueness: true
   validates :title,   presence: true, uniqueness: true
   validates :inn,     presence: true, uniqueness: {case_sensitive: false} 
   validates :ogrn,    presence: true, uniqueness: true, format: {with: /\A[\d+]{13}\Z/, message: 'must be 13 digits'}, if: -> {!individual?}
   validates :ogrnip,  presence: true, uniqueness: true, format: {with: /\A[\d+]{15}\Z/, message: 'must be 15 digits'}, if: -> {individual?}
-  validates :kpp,     uniqueness: true, format: {with: /\A[\d+]{9}\Z/, message: "must be 9 digits"}, if: -> {kpp.present?}
-  validates :uuid,    presence: true, uniqueness: true
+  validates :kpp,                     uniqueness: true, format: {with: /\A[\d+]{9}\Z/, message: "must be 9 digits"}, if: -> {kpp.present?}
+  # validates :uuid,    presence: true, uniqueness: true
 
   validate :inn_digits_length
   validate :individual_enterpreuner_orgnip
@@ -107,5 +108,9 @@ class Partner < ApplicationRecord
     def generate_dummy_email  # email MUST be assigned if not existing
       # 'self' - must be used here! (?)
       self.email = "#{self.code}@dummy.su" if self.email.blank? # if email is nil or ''
+    end
+
+    def generate_uuid
+      self.uuid = SecureRandom.uuid if self.uuid.blank?
     end
 end

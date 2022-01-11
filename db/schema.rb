@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_084040) do
+ActiveRecord::Schema.define(version: 2022_01_11_075921) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -75,6 +75,36 @@ ActiveRecord::Schema.define(version: 2022_01_10_084040) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "banks", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.string "brief_title"
+    t.string "legal_address"
+    t.string "postal_address"
+    t.string "phone"
+    t.string "email", null: false
+    t.string "url"
+    t.string "corr_acc", null: false
+    t.string "corr_acc_with", null: false
+    t.string "bic", null: false
+    t.string "inn", null: false
+    t.string "ogrn", null: false
+    t.string "kpp"
+    t.string "okpo"
+    t.string "okato"
+    t.string "comment"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bic"], name: "index_banks_on_bic", unique: true
+    t.index ["corr_acc"], name: "index_banks_on_corr_acc", unique: true
+    t.index ["email"], name: "index_banks_on_email", unique: true
+    t.index ["inn"], name: "index_banks_on_inn", unique: true
+    t.index ["name"], name: "index_banks_on_name", unique: true
+    t.index ["ogrn"], name: "index_banks_on_ogrn", unique: true
+    t.index ["title"], name: "index_banks_on_title", unique: true
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
     t.string "title", null: false
@@ -119,7 +149,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_084040) do
     t.date "certificate_date"
     t.integer "status", limit: 1, default: 0, null: false
     t.text "comment"
-    t.string "uuid", default: "9a7bbc68-be1f-4c18-95b0-aab865724600", null: false
+    t.string "uuid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_partners_on_code", unique: true
@@ -127,7 +157,6 @@ ActiveRecord::Schema.define(version: 2022_01_10_084040) do
     t.index ["inn"], name: "index_partners_on_inn", unique: true
     t.index ["name"], name: "index_partners_on_name", unique: true
     t.index ["title"], name: "index_partners_on_title", unique: true
-    t.index ["uuid"], name: "index_partners_on_uuid", unique: true
   end
 
   create_table "samples", force: :cascade do |t|
