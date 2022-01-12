@@ -1,0 +1,38 @@
+.container
+  %h1= t PartnerBank.model_name.human
+  %table.table.table-striped
+    %tbody
+      - @partner_bank.attributes.each do |key, value|
+        - unless key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+          %tr
+            - if key == 'status'
+              %td= t 'status.status'
+              %td= status_mark @partner_bank.status
+            - elsif key == 'ancestry'
+              - if @partner_bank.parent.present?
+                %td= t 'tree.parent'
+                - if PartnerBank.column_names.include? 'title'
+                  %td= "#{@partner_bank.parent.title} (id: #{@partner_bank.ancestry})"
+                - elsif PartnerBank.column_names.include? 'name'
+                  %td= "#{@partner_bank.parent.name} (id: #{@partner_bank.ancestry})"
+                - else
+                  %td= "#{@partner_bank.ancestry})"
+              - if @partner_bank.children.present?
+                %tr
+                  %td= t 'tree.children'
+                  %td
+                    - @partner_bank.children.each do |child|
+                      - if PartnerBank.column_names.include? 'title'
+                        = "#{child.title} (id=#{child.id})"
+                      - elsif PartnerBank.column_names.include? 'name'
+                        = "#{child.name} (id=#{child.id})"
+                      - else
+                        = "#{child.id}"
+                      - unless child == @partner_bank.children.last
+                        %br
+            - else
+              %td= t "activerecord.attributes.partner_bank.#{key}"
+              %td= value
+      = render 'admin/shared/show_images', object: @partner_bank
+  = render 'admin/shared/show_rich_text_content', object: @partner_bank
+  = render 'admin/shared/show_actions', object: @partner_bank

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_075921) do
+ActiveRecord::Schema.define(version: 2022_01_12_083708) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -131,6 +131,19 @@ ActiveRecord::Schema.define(version: 2022_01_11_075921) do
     t.index ["title"], name: "index_companies_on_title", unique: true
   end
 
+  create_table "partner_banks", force: :cascade do |t|
+    t.integer "partner_id", null: false
+    t.integer "bank_id", null: false
+    t.string "account", null: false
+    t.text "comment"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account"], name: "index_partner_banks_on_account", unique: true
+    t.index ["bank_id"], name: "index_partner_banks_on_bank_id"
+    t.index ["partner_id"], name: "index_partner_banks_on_partner_id"
+  end
+
   create_table "partners", force: :cascade do |t|
     t.string "name", null: false
     t.string "code", null: false
@@ -186,4 +199,6 @@ ActiveRecord::Schema.define(version: 2022_01_11_075921) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "partner_banks", "banks"
+  add_foreign_key "partner_banks", "partners"
 end

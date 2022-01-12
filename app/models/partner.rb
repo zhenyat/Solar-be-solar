@@ -32,9 +32,9 @@ class Partner < ApplicationRecord
   include Emailable
   include ImagesHandleable
 
-  # has_many :partner_banks
-  # has_many :banks, through: :partner_banks
-  # accepts_nested_attributes_for :partner_banks
+  has_many :partner_banks
+  has_many :banks, through: :partner_banks
+  accepts_nested_attributes_for :partner_banks
 
   enum kind:   %w(zao individual oao ooo pao) #%w(ЗАО ИП ОАО ООО ПАО)
   enum role:   %w(supplier market_place service_provider subcontractor)
