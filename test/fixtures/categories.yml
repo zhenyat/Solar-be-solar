@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  title: MyString
+  abstract: MyText
+  position: 1
+  visibility: false
+  status: 1
+  url: MyString
+  comment: MyText
+  seo_title: MyString
+  seo_description: MyText
+  seo_keywords: MyText
+
+two:
+  name: MyString
+  title: MyString
+  abstract: MyText
+  position: 1
+  visibility: false
+  status: 1
+  url: MyString
+  comment: MyText
+  seo_title: MyString
+  seo_description: MyText
+  seo_keywords: MyText

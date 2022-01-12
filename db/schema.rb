@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_083708) do
+ActiveRecord::Schema.define(version: 2022_01_12_141545) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -103,6 +103,27 @@ ActiveRecord::Schema.define(version: 2022_01_12_083708) do
     t.index ["name"], name: "index_banks_on_name", unique: true
     t.index ["ogrn"], name: "index_banks_on_ogrn", unique: true
     t.index ["title"], name: "index_banks_on_title", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.text "abstract", null: false
+    t.integer "position"
+    t.boolean "visibility"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.string "url", null: false
+    t.text "comment"
+    t.string "seo_title", null: false
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["title"], name: "index_categories_on_title", unique: true
+    t.index ["url"], name: "index_categories_on_url", unique: true
   end
 
   create_table "companies", force: :cascade do |t|
