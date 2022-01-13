@@ -42,3 +42,9 @@ en:
     ancestries:     Ancestries
     descendant:     Descendant
     descendants:    Descendants
+
+  # SEO
+    # seo:
+    #   title:           SEO Title
+    #   description:     SEO Description
+    #   keywords:        SEO Keywords

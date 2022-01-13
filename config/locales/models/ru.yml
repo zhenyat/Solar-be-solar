@@ -7,6 +7,18 @@ ru:
       account:
         one:                    Аккаунт
         other:                  Аккаунты
+      category:
+        one:                    Категория
+        other:                  Категории
+      partner:
+        one:                    Партнер
+        other:                  Партнеры
+      partner_bank:
+        one:                    Банк партнера
+        other:                  Банки партнера
+      product:
+        one:                    Товар
+        other:                  Товары
       sample:
         one:                    Образец
         other:                  Образцы
@@ -15,10 +27,10 @@ ru:
       user:
         role:                   Роль
         last_name:              Фамилия
-        first_name:             Имя
+        first_name:              Имя
         email:                  Э/почта
         password:               Пароль
-        password_confirmation:  Подтверждение пароля
+        password_confirmation:   Подтверждение пароля
         status:                 Status
       account:
         email:                  Э/почта
@@ -26,6 +38,100 @@ ru:
         nickname:               Псевдоним
         password:               Пароль
         password_confirmation:  Подтверждение пароля
+      bank:
+        name:                   Имя
+        title:                  Полное наименование
+        brief_title:            Краткое наименование
+        inn:                    ИНН
+        url:                    URL
+        phone:                  Телефон
+        email:                  Э/почта
+        legal_address:          Юридический адрес
+        postal_address:         Почтовый адрес
+        bic:                    БИК
+        corr_acc:               Корр. счет
+        corr_acc_with:          Подразделение ЦБ РФ
+        kpp:                    КПП
+        ogrn:                   ОГРН
+        okpo:                   ОКПО
+        okato:                  ОКАТО
+        comment:                Комментарий
+      category:
+        name:                   Имя в БД
+        title:                  Наименование
+        ancestry:               Предок
+        abstract:               Краткое описание
+        position:               Положение
+        visibility:             Видимость
+        status:                 Статус
+        url:                    URL
+        seo_title:              SEO Заголовок
+        seo_description:        SEO Описание
+        seo_keywords:           SEO Ключевые слова
+      company:
+        name:                   Имя
+        title:                  Заголовок
+        inn:                    ИНН
+        ogrnip:                 ОГРНИП
+        certificate_number:      Номер документа
+        certificate_date:        Дата выдачи
+        email:                  Э/почта
+        phone:                  Телефон
+        legal_address:          Юридический адрес
+        pickup_address:         Адрес самовывоза
+        url:                    URL
+        comment:                Комментарий
+        seo_title:              SEO Заголовок
+        seo_description:        SEO Описание
+        seo_keywords:           SEO Ключевые слова
+      partner:
+        name:                   Имя
+        code:                   Код
+        kind:                   Форма юридического лица
+        role:                   Роль партнера
+        title:                  Полное название
+        inn:                    ИНН
+        url:                    URL
+        email:                  Э/почта
+        kpp:                    КПП
+        ogrn:                   ОГРН
+        ogrnip:                 ОГРНИП
+        okpo:                   ОКПО
+        okato:                  ОКАТО
+        certificate_number:      Номер Свидетельства
+        certificate_date:        Дата выдачи Свидетельства
+        comment:                Комментарий
+        kind_list:
+          zao:                  ЗАО
+          individual:           ИП
+          oao:                  ОАО
+          ooo:                  ООО
+          pao:                  ПАО
+        role_list:
+          supplier:             Поставщик
+          market_place:         Маркетплейс
+          service_provider:      Поставщик услуг
+          subcontractor:        Субподрядчик
+      partner_bank:
+        partner:                Партнер
+        bank:                   Банк
+        account:                Р/счет
+      product:
+        category:               Категория
+        name:                   Имя в БД
+        title:                  Наименование
+        sku:                    Артикул
+        qty:                    Кол-во
+        hot:                    Акция
+        price:                  Цена
+        hot_price:              Цена по акции
+        abstract:               Краткое описание
+        position:               Положение
+        status:                 Статус
+        url:                    URL
+        seo_title:              SEO Заголовок
+        seo_description:        SEO Описание
+        seo_keywords:           SEO Ключевые слова
       sample:
         name:                   Имя
         title:                  Наименование
@@ -33,4 +139,3 @@ ru:
         price:                  Цена
         quantity:               Количество
         status:                 Статус
-

@@ -23,12 +23,12 @@
         %td= category.abstract
         %td= category.position
         %td= category.visibility
-        /%td= status_mark category.status
         %td= category.url
         %td= category.comment
         %td= category.seo_title
         %td= category.seo_description
         %td= category.seo_keywords
+        %td= status_mark category.status
         %td= render 'admin/shared/index_buttons', resource: category
 %br
 .row

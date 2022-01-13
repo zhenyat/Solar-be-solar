@@ -42,3 +42,9 @@ ru:
     ancestries:     Предки
     descendant:     Потомок
     descendants:    Потомки
+
+  # SEO
+    # seo:
+    #   title:           SEO Заголовок
+    #   description:     SEO Описание
+    #   keywords:        SEO Ключевые слова
