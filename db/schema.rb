@@ -183,7 +183,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_141545) do
     t.date "certificate_date"
     t.integer "status", limit: 1, default: 0, null: false
     t.text "comment"
-    t.string "uuid"
+    t.string "cloud_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_partners_on_code", unique: true

@@ -1,7 +1,7 @@
 ################################################################################
 # Model:  Category
 #
-# Purpose:
+# Purpose: Category of products with Tree-structure
 #
 # Category attributes:
 #   name              - string,  not NULL, unique
@@ -19,9 +19,12 @@
 #  12.01.2022 ZT
 ################################################################################
 class Category < ApplicationRecord
-  include ImagesHandleable
   include Heritable
+  include ImagesHandleable
   include Positionable
+
+  has_rich_text :content
+  has_many      :products
 
   enum status: %w(active archived)
 

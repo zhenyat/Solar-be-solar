@@ -18,7 +18,7 @@ class CreatePartners < ActiveRecord::Migration[6.1]
       t.date    :certificate_date
       t.integer :status, null: false, default: 0, limit: 1  # default: 'active'
       t.text    :comment
-      t.string  :uuid#,  null: false, index: { unique: true }
+      t.string  :cloud_code
       t.timestamps
     end
   end

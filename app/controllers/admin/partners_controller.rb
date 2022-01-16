@@ -55,6 +55,6 @@ class Admin::PartnersController < Admin::BaseController
 
     # Only allows a trusted parameter 'white list' through
     def partner_params
-      params.require(:partner).permit(:name, :code, :title, :kind, :role, :email, :url, :inn, :kpp, :ogrn, :ogrnip, :okpo, :okato, :certificate_number, :certificate_date, :status, :comment, :uuid, :cover_image, :remove_cover_image, images: [])
+      params.require(:partner).permit(:name, :code, :title, :kind, :role, :email, :url, :inn, :kpp, :ogrn, :ogrnip, :okpo, :okato, :certificate_number, :certificate_date, :status, :comment, :cloud_code, :cover_image, :remove_cover_image, images: [])
     end
 end

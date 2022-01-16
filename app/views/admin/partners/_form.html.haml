@@ -25,7 +25,7 @@
           = f.input :status, default: 0
           /= render 'admin/shared/status_buttons', f: f
           = f.input :comment
-          = f.input :uuid
+          /= f.input :cloud_code
 
           = render 'admin/shared/form_rich_text_content', f: f, object: @partner
           = render 'admin/shared/form_images', f: f, object: @partner

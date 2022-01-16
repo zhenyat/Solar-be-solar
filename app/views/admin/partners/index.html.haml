@@ -18,7 +18,7 @@
       %th= Partner.human_attribute_name(:certificate_number)
       %th= Partner.human_attribute_name(:certificate_date)
       %th= Partner.human_attribute_name(:comment)
-      %th= Partner.human_attribute_name(:uuid)
+      %th= Partner.human_attribute_name(:cloud_code)
       %th= t 'status.status'
       %th= t 'actions.actions'
 
@@ -41,7 +41,7 @@
         %td= partner.certificate_number
         %td= partner.certificate_date
         %td= partner.comment
-        %td= partner.uuid
+        %td= partner.cloud_code
         %td= status_mark partner.status
         %td= render 'admin/shared/index_buttons', resource: partner
 %br

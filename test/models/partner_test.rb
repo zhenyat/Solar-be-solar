@@ -15,8 +15,6 @@ class PartnerTest < ActiveSupport::TestCase
     should validate_presence_of(:inn)
     should validate_uniqueness_of(:inn).case_insensitive
     should validate_uniqueness_of(:email).case_insensitive
-    # should validate_presence_of(:uuid)
-    # should validate_uniqueness_of(:uuid)
   end
 
   ###   Alternative uniqueness validation
@@ -33,11 +31,4 @@ class PartnerTest < ActiveSupport::TestCase
     should validate_presence_of(:email)
     assert_includes(@partner.errors[:email], 'not assigned automatically') if !generate_dummy_email
   end
-
-  # def uuid_to_be_generated
-  #   @partner.uuid = ''
-  #   @partner.valid?
-  #   should validate_presence_of(:uuid)
-  #   assert_includes(@partner.errors[:uuid], 'not assigned automatically') if !generate_uuid
-  # end
 end
