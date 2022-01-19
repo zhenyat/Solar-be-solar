@@ -3,6 +3,7 @@ begin
     Partner.create name: "КОНОПЕЛЬ", 
         code: 'kono',  kind: 3, role: 0, 
         title: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ПРОИЗВОДСТВЕННАЯ КОМПАНИЯ "КОНОПЕЛЬ"', 
+        phone: '+79302850208',
         email: 'cbdo@konopel.ru', url: "https://konopel.ru",
         inn: '5250062707', kpp: '525001001', 
         ogrn: '1155250001125', #okpo: '48314529',
@@ -39,13 +40,15 @@ begin
     Partner.create name: "bfactor",
         code: 'bf', kind: 1, role: 0,
         title: 'Индивидуальный предприниматель Губаева Диана Дамировна', 
+        phone: '+74956516267',
         email: 'info@bfactor.ru', url: "https://bfactor.ru",
         inn: '770504186260', ogrnip: '314774628701512' #okpo: '0193850636'
 
     if 1 == 2 # Fake for testing
       Partner.create name: "roga-n-kopyta",
         code: 'rk', kind: 2, role: 2,
-        title: 'ОАО "Рога и Копыта"', 
+        title: 'ОАО "Рога и Копыта"',
+        phone: '+79111234567', fax: '+79117654321', 
         email: 'rg@example.ru', url: "https://roga-n-kopyta.ru",
         inn: '7902840709', ogrn: '7037665049800', kpp: '470543316'
     end

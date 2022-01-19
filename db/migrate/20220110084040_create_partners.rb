@@ -6,6 +6,8 @@ class CreatePartners < ActiveRecord::Migration[6.1]
       t.string  :title,  null: false, index: { unique: true }
       t.integer :kind,   null: false, default: 3, limit: 1  # default: 'ooo'
       t.integer :role,   null: false, default: 0, limit: 1  # default: 'supplier'
+      t.string  :phone
+      t.string  :fax
       t.string  :email,  null: false, index: { unique: true }
       t.string  :url
       t.string  :inn,    null: false, index: { unique: true }

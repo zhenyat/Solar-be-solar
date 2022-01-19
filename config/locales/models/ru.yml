@@ -92,6 +92,8 @@ ru:
         title:                  Полное название
         inn:                    ИНН
         url:                    URL
+        phone:                  Телефон
+        fax:                    Факс
         email:                  Э/почта
         kpp:                    КПП
         ogrn:                   ОГРН

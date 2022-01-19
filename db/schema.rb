@@ -171,6 +171,8 @@ ActiveRecord::Schema.define(version: 2022_01_12_141545) do
     t.string "title", null: false
     t.integer "kind", limit: 1, default: 3, null: false
     t.integer "role", limit: 1, default: 0, null: false
+    t.string "phone"
+    t.string "fax"
     t.string "email", null: false
     t.string "url"
     t.string "inn", null: false

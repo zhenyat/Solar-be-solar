@@ -10,6 +10,7 @@
 #   kind      - enum {zao | individual | oao | ooo (default) | pao}
 #   role      - enum {supplier (default) | market_place | service_provider | subcontractor}
 #   phone     - string
+#   fax       - string
 #   email     - string,  not NULL, unique (assigned with dummy value if not existing)
 #   url       - string
 #   inn       - string,  not NULL, unique 
